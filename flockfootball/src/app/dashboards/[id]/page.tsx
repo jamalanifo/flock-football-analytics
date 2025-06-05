@@ -68,33 +68,110 @@ export default function DashboardDetail({ params }: { params: { id: string } }) 
 
   return (
     <MainLayout>
-      <div className="py-8">
+      <div className="py-12">
+        
+        {/* Back Navigation */}
         <div className="mb-8">
-          <Link href="/dashboards" className="text-[#B19CD9] hover:underline flex items-center">
-            ← Back to dashboards
+          <Link 
+            href="/dashboards" 
+            className="inline-flex items-center text-primary hover:text-dark transition-colors duration-300 font-medium"
+          >
+            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+            Back to Dashboards
           </Link>
         </div>
 
-        <h1 className="text-3xl font-bold text-[#B19CD9] mb-2">{dashboard.title}</h1>
-        <p className="text-[#606060] mb-8">{dashboard.description}</p>
-        
-        {dashboard.isPremium ? (
-          <div className="bg-white p-8 rounded-lg shadow-md text-center">
-            <h2 className="text-2xl font-bold text-[#606060] mb-4">Premium Dashboard</h2>
-            <p className="text-[#606060] mb-6">
-              This dashboard is available exclusively to premium subscribers.
+        {/* Dashboard Header */}
+        <div className="mb-8">
+          <div className="bg-surface rounded-2xl p-8 shadow-glass">
+            <div className="flex items-start justify-between mb-4">
+              <h1 className="text-4xl font-light text-primary">
+                {dashboard.title}
+              </h1>
+              {dashboard.isPremium && (
+                <span className="bg-secondary text-dark px-4 py-2 rounded-full text-sm font-medium">
+                  Premium
+                </span>
+              )}
+            </div>
+            <p className="text-dark opacity-80 text-lg max-w-3xl">
+              {dashboard.description}
             </p>
-            <div className="mt-4">
-              <a 
-                href="/pricing" 
-                className="bg-[#F2D680] hover:bg-opacity-90 text-[#606060] px-8 py-3 rounded-md text-lg font-medium transition-colors"
-              >
-                Upgrade to Premium
-              </a>
+          </div>
+        </div>
+        
+        {/* Dashboard Content */}
+        {dashboard.isPremium ? (
+          /* Premium Upgrade Card */
+          <div className="bg-surface rounded-2xl p-12 shadow-glass text-center">
+            <div className="max-w-2xl mx-auto">
+              
+              {/* Lock Icon */}
+              <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-8 h-8 text-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                </svg>
+              </div>
+              
+              <h2 className="text-3xl font-light text-primary mb-4">Premium Dashboard</h2>
+              <p className="text-dark opacity-80 mb-8 text-lg">
+                This advanced analytics dashboard is available exclusively to premium subscribers. 
+                Unlock deeper insights and gain the competitive edge you need to dominate your fantasy league.
+              </p>
+              
+              {/* Features List */}
+              <div className="bg-background rounded-xl p-6 mb-8">
+                <h3 className="font-bold text-dark mb-4">Premium Features Include:</h3>
+                <ul className="text-left space-y-2 text-dark opacity-80">
+                  <li className="flex items-center">
+                    <svg className="w-5 h-5 text-primary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    Advanced player and team analytics
+                  </li>
+                  <li className="flex items-center">
+                    <svg className="w-5 h-5 text-primary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    Historical trend analysis
+                  </li>
+                  <li className="flex items-center">
+                    <svg className="w-5 h-5 text-primary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    Weekly data updates
+                  </li>
+                  <li className="flex items-center">
+                    <svg className="w-5 h-5 text-primary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    Export capabilities
+                  </li>
+                </ul>
+              </div>
+              
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a 
+                  href="/pricing" 
+                  className="px-8 py-4 bg-primary text-white rounded-[25px] font-bold hover:bg-opacity-90 transition-all duration-300 hover:shadow-lg"
+                >
+                  Upgrade to Premium
+                </a>
+                <Link 
+                  href="/dashboards" 
+                  className="px-8 py-4 border-2 border-dark text-dark rounded-[25px] font-bold hover:bg-dark hover:text-white transition-all duration-300"
+                >
+                  View Free Dashboards
+                </Link>
+              </div>
             </div>
           </div>
         ) : (
-          <div className="bg-white p-2 rounded-lg shadow-md w-full">
+          /* Free Dashboard Embed */
+          <div className="bg-surface rounded-2xl p-4 shadow-glass">
             <SupersetEmbed
               permalink={dashboard.permalink}
               title={dashboard.title}
