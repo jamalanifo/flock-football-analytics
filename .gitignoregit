@@ -1,0 +1,1 @@
+"database-migrations/MVP_DB.sql"  add .gitignoregit rm --cached database-migrations/MVP_DB.sqlgit commit -m "Ignore large SQL file"git push
