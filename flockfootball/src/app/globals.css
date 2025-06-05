@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f0f0f0;
+  --background: #B19CD9;  /* Changed from #f0f0f0 to your primary purple */
   --foreground: #2d2d2d;
   --font-inter: var(--font-inter);
 }

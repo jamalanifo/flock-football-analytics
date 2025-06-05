@@ -18,7 +18,7 @@ const config: Config = {
         accent: "#F4A7B9",       // Pastel Pink
         light: "#F8F8F8",        // Light Gray
         dark: "#606060",         // Charcoal Gray
-        background: "#f0f0f0",   // Page background
+        background: "#B19CD9",   // Changed to match your purple background
         surface: "#ffffff",      // Card/component background
       },
       borderRadius: {
