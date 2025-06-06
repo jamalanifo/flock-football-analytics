@@ -12,14 +12,20 @@ const config: Config = {
         sans: ['var(--font-inter)'],
       },
       colors: {
-        // Your brand colors
-        primary: "#B19CD9",      // Pastel Purple
-        secondary: "#F2D680",    // Pastel Gold
-        accent: "#F4A7B9",       // Pastel Pink
-        light: "#F8F8F8",        // Light Gray
-        dark: "#606060",         // Charcoal Gray
-        background: "#B19CD9",   // Changed to match your purple background
-        surface: "#ffffff",      // Card/component background
+        // Updated v33 colors
+        primary: "#E6D9F5",           // Soft lilac (for hero background)
+        secondary: "#F2D680",         // Pastel Gold (keep same)
+        accent: "#F4A7B9",            // Pastel Pink (keep same)
+        light: "#F8F8F8",             // Light Gray (keep same)
+        dark: "#606060",              // Charcoal Gray (keep same)
+        
+        // New v33 background system
+        background: "#F0EBFA",        // Light lilac page background
+        surface: "#FEFCFF",           // Off-white content areas
+        
+        // Content area utilities
+        'content-bg': "#FEFCFF",      // Off-white for cards/hero
+        'page-bg': "#F0EBFA",         // Light lilac for page background
       },
       borderRadius: {
         'xl': '1rem',

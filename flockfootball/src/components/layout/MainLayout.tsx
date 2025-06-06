@@ -16,20 +16,18 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
   return (
     <div className="min-h-screen bg-background">
       {/* Main content area with padding for the floating nav */}
-      <div className="pt-50 pb-8 px-4">
+      <div className="pt-24 pb-8 px-4">
         
         {/* Floating Navigation Bar - positioned fixed at top */}
-        <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-5xl px-4">
+        <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-4xl px-4">
           <div className="glass-nav rounded-[50px] px-8 py-4 flex justify-between items-center shadow-glass">
             
-            {/* Logo Section */}
+            {/* Logo Section - Fixed to remove giant logo issue */}
             <Link href="/" className="flex items-center space-x-3">
-              <img 
-                src="/logo.png" 
-                alt="Flock Football Logo" 
-                className="h-22 w-22 object-contain"
-              />
-              <span className="text-2xl font-bold text-dark">Flock Football</span>
+              <div className="h-8 w-8 bg-primary rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-sm">FF</span>
+              </div>
+              <span className="text-xl font-bold text-dark">Flock Football</span>
             </Link>
             
             {/* Desktop Navigation Links */}
@@ -38,7 +36,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
                 <Link 
                   key={link.path}
                   href={link.path}
-                  className="text-2xl text-dark hover:text-primary transition-colors duration-300 font-medium"
+                  className="text-dark hover:text-primary transition-colors duration-300 font-medium"
                 >
                   {link.name}
                 </Link>
