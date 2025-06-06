@@ -5,14 +5,14 @@ export default function Home() {
     <MainLayout>
       {/* Hero Section - using your existing structure but updated colors */}
       <div className="min-h-[600px] flex items-center justify-center">
-        <div className="w-full max-w-4xl">
+        <div className="w-full max-w-full">
           
           {/* Main Hero Card - now uses off-white background */}
-          <div className="bg-content-bg rounded-3xl p-12 shadow-glass hover:shadow-hover transition-all duration-300 hover:-translate-y-1">
+          <div className="bg-[rgba(254,252,255,0)] rounded-3xl p-2 shadow-glass hover:shadow-hover transition-all duration-300 hover:-translate-y-1">
             
             {/* Hero Text Content */}
             <div className="text-center mb-12">
-              <h1 className="text-5xl md:text-6xl font-light text-dark mb-6 leading-tight">
+              <h1 className="text-5xl md:text-6xl font-semibold text-dark mb-6 leading-tight">
                 Dominating fantasy football with data-driven insights.
               </h1>
               <p className="text-xl text-dark opacity-80 max-w-2xl mx-auto mb-10">
@@ -29,12 +29,16 @@ export default function Home() {
             </div>
             
             {/* Dashboard Preview Grid - NEW from v33 */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="space-y-8">
               
               {/* Dashboard 1 - Quarterback Analytics */}
-              <div className="bg-surface rounded-2xl p-5 shadow-glass hover:shadow-hover transition-all duration-300 hover:-translate-y-1 border border-white/30">
-                <div className="w-full h-36 rounded-xl mb-4 bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-semibold text-center">
-                  <span>Passing Stats<br/>Dashboard</span>
+              <div className="bg-surface rounded-2xl p-0 shadow-glass hover:shadow-hover transition-all duration-300 hover:-translate-y-1 border border-white/30">
+                <div className="w-full h-full rounded-xl mb-4 overflow-hidden">
+                  <img 
+                    src="/Target_Share.jpg" 
+                    alt="Quarterback Analytics Dashboard" 
+                    className="w-150 h-full object-conatin bg-white"
+                  />
                 </div>
                 <div className="text-left">
                   <h3 className="text-lg font-semibold text-dark mb-2">Quarterback Analytics</h3>
@@ -48,9 +52,13 @@ export default function Home() {
               </div>
               
               {/* Dashboard 2 - Wide Receiver Insights */}
-              <div className="bg-surface rounded-2xl p-5 shadow-glass hover:shadow-hover transition-all duration-300 hover:-translate-y-1 border border-white/30">
-                <div className="w-full h-36 rounded-xl mb-4 bg-gradient-to-br from-secondary to-accent flex items-center justify-center text-white font-semibold text-center">
-                  <span>Receiving Stats<br/>Dashboard</span>
+              <div className="bg-surface rounded-2xl p-0 shadow-glass hover:shadow-hover transition-all duration-300 hover:-translate-y-1 border border-white/30">
+                <div className="w-full h-full rounded-xl mb-4 overflow-hidden">
+                  <img 
+                    src="/Snap_Share.jpg" 
+                    alt="Wide Receiver Insights Dashboard" 
+                    className="w-150 h-full object-contain bg-white"
+                  />
                 </div>
                 <div className="text-left">
                   <h3 className="text-lg font-semibold text-dark mb-2">Wide Receiver Insights</h3>
@@ -64,9 +72,13 @@ export default function Home() {
               </div>
               
               {/* Dashboard 3 - Running Back Analysis */}
-              <div className="bg-surface rounded-2xl p-5 shadow-glass hover:shadow-hover transition-all duration-300 hover:-translate-y-1 border border-white/30">
-                <div className="w-full h-36 rounded-xl mb-4 bg-gradient-to-br from-accent to-primary flex items-center justify-center text-white font-semibold text-center">
-                  <span>Rushing Stats<br/>Dashboard</span>
+              <div className="bg-surface rounded-2xl p-0 shadow-glass hover:shadow-hover transition-all duration-300 hover:-translate-y-1 border border-white/30">
+                <div className="w-full h-full rounded-xl mb-4 overflow-hidden">
+                  <img 
+                    src="/custom_table.jpg" 
+                    alt="Running Back Analysis Dashboard" 
+                    className="w-150 h-full object-contain bg-white"
+                  />
                 </div>
                 <div className="text-left">
                   <h3 className="text-lg font-semibold text-dark mb-2">Running Back Analysis</h3>
